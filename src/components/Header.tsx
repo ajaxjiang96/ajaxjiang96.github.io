@@ -1,12 +1,24 @@
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import { FC, UIEvent, useEffect, useState } from 'react';
 
 export const Header: FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const handleScroll = (e: UIEvent<HTMLDivElement>) => {
+    console.log(e.currentTarget);
+  };
+  useEffect(() => {
+    console.log('listen');
+    document.body.addEventListener('scroll', handleScroll);
+    return () => {
+      document.body.removeEventListener('scroll', handleScroll);
+    };
+  });
   return (
     <HeaderBase>
-      <Logo src="assets/logo.png" />
+      <HeaderItem href="#home">
+        <Logo src="assets/logo.png" />
+      </HeaderItem>
       <Nav>
-        <HeaderItem href="#home">Home</HeaderItem>
         <HeaderItem href="#portfolio">Portfolio</HeaderItem>
         <HeaderItem href="#experiences">Experiences</HeaderItem>
       </Nav>
@@ -41,8 +53,9 @@ const HeaderBase = styled.header`
   height: 100px;
   box-sizing: border-box;
   padding: 40px;
-  background: linear-gradient(#fff, #fff, #fff0);
+  background: #fff;
   position: sticky;
   top: 0;
   z-index: 1200;
+  border-bottom: 1px solid #eee;
 `;
