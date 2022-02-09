@@ -4,7 +4,7 @@ import { FC } from 'react';
 const SectionBase = styled.section`
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 100px); /* header height */
   position: relative;
 `;

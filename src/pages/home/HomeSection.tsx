@@ -7,7 +7,7 @@ export const HomeSection: FC = () => {
     <Section id="home">
       <Container>
         <PortraitContainer>
-          <PortraitImg src="assets/portrait.png" />
+          <PortraitImg src="assets/portrait.svg" />
         </PortraitContainer>
         <div
           className=""
