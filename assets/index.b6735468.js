@@ -25,7 +25,7 @@ import{j as h,n as o,l as d,R as u,a as g}from"./vendor.762ae604.js";const m=fun
 `,j=o.section`
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 100px); /* header height */
   position: relative;
 `,p=({id:t,children:n})=>s(j,{children:[e("a",{id:t,style:{position:"absolute",top:-100}}),n]}),N=({items:t})=>s(S,{children:[e("div",{className:"ellipsis"}),e("div",{className:"ellipsis"}),e("div",{className:"ellipsis"}),e("div",{className:"line",children:d.exports.map(t,n=>e("div",{className:`dot ${n.current?"current":""}`,children:s("div",{className:"dot-inner",children:[e("h1",{children:n.title}),e("h5",{children:d.exports.join(d.exports.compact([n.description,n.date]),", ")})]})}))}),e("div",{className:"ellipsis"}),e("div",{className:"ellipsis"}),e("div",{className:"ellipsis"})]}),S=o.div`
@@ -97,7 +97,7 @@ import{j as h,n as o,l as d,R as u,a as g}from"./vendor.762ae604.js";const m=fun
       }
     }
   }
-`,k=[{title:"Intact Financial Corporation (Canada)",date:"2017-2018",description:"Frontend Developer Intern"},{title:"Graduated From University of Toronto",date:"2019",description:"Bachelor of Science in Computer Science"},{title:"EPAM Systems",date:"2019-2020",description:"Junior Software Engineer"},{title:"EPAM Systems",date:"2020-2021",description:"Software Engineer"},{title:"TUXMART",date:"2021-Present",description:"Full-Stack Developer",current:!0}],z=()=>e(p,{id:"experiences",children:e(N,{items:k})}),C=()=>e(p,{id:"home",children:s(E,{children:[e(A,{children:e(I,{src:"assets/portrait.png"})}),s("div",{className:"",style:{flex:1,display:"flex",flexDirection:"column",alignItems:"flex-start",gap:10},children:[e(P,{children:"Ajax (Jiacheng) Jiang"}),e(l,{inverse:!0,children:"Suzhou, China"}),e(l,{children:"Software Developer"}),e(l,{children:"UI/UX Designer"}),e(l,{children:"Cat Owner"})]})]})}),P=o.span`
+`,k=[{title:"Intact Financial Corporation (Canada)",date:"2017-2018",description:"Frontend Developer Intern"},{title:"Graduated From University of Toronto",date:"2019",description:"Bachelor of Science in Computer Science"},{title:"EPAM Systems",date:"2019-2020",description:"Junior Software Engineer"},{title:"EPAM Systems",date:"2020-2021",description:"Software Engineer"},{title:"TUXMART",date:"2021-Present",description:"Full-Stack Developer",current:!0}],z=()=>e(p,{id:"experiences",children:e(N,{items:k})}),C=()=>e(p,{id:"home",children:s(E,{children:[e(A,{children:e(I,{src:"assets/portrait.svg"})}),s("div",{className:"",style:{flex:1,display:"flex",flexDirection:"column",alignItems:"flex-start",gap:10},children:[e(P,{children:"Ajax (Jiacheng) Jiang"}),e(l,{inverse:!0,children:"Suzhou, China"}),e(l,{children:"Software Developer"}),e(l,{children:"UI/UX Designer"}),e(l,{children:"Cat Owner"})]})]})}),P=o.span`
   font-size: 24px;
   font-weight: bold;
   color: #333;
