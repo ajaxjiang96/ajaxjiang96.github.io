@@ -1,13 +1,62 @@
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import { FC, Suspense, useRef, useState } from 'react';
 import { Section } from '../../components/Section';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { useLoader } from '@react-three/fiber';
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
+import { OrbitControls, PresentationControls, useFBX, useGLTF } from '@react-three/drei';
+import { MeshToonMaterial } from 'three';
+
+function Box(props: JSX.IntrinsicElements['mesh']) {
+  const ref = useRef<THREE.Mesh>(null!);
+  // const [hovered, hover] = useState(false);
+  // const [clicked, click] = useState(false);
+  // useFrame((state, delta) => (ref.current.rotation.x += 0.01));
+  const f = useGLTF('/assets/char.glb');
+  return (
+    <Suspense fallback={<div>Loading</div>}>
+      <primitive object={f.scene} material={new MeshToonMaterial()} />
+    </Suspense>
+  );
+  // return (
+  //   <mesh
+  //     {...props}
+  //     ref={ref}
+  //     scale={clicked ? 1.5 : 1}
+  //     onClick={(event) => click(!clicked)}
+  //     onPointerOver={(event) => hover(true)}
+  //     onPointerOut={(event) => hover(false)}
+  //   >
+  //     <boxGeometry args={[1, 1, 1]} />
+  //     <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+  //   </mesh>
+  // );
+}
+
 
 export const HomeSection: FC = () => {
   return (
     <Section id="home">
       <Container>
         <PortraitContainer>
-          <PortraitImg src="assets/portrait.svg" />
+          {/* <PortraitImg src="assets/portrait.svg" /> */}
+          <Suspense fallback={<div>Loading Canvas</div>}>
+            <Canvas flat dpr={[1, 2]} camera={{ fov: 25, position: [0, 4, 5] }}>
+              <ambientLight />
+              {/* <pointLight position={[10, 10, 10]} /> */}
+              {/* <Box position={[-1.2, 0, 0]} /> */}
+              {/* <PresentationControls
+                global
+                zoom={0.8}
+                rotation={[0, -Math.PI / 4, 0]}
+                polar={[0, Math.PI / 4]}
+                azimuth={[-Math.PI / 4, Math.PI / 4]}
+              > */}
+              <Box position={[0, 0, 0]} />
+              {/* </PresentationControls> */}
+              <OrbitControls />
+            </Canvas>
+          </Suspense>
         </PortraitContainer>
         <div
           className=""

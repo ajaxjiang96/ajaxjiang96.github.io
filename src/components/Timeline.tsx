@@ -16,7 +16,7 @@ export const Timeline: FC<{ items?: Item[] }> = ({ items }) => {
       <div className="ellipsis" />
       <div className="line">
         {map(items, (item) => (
-          <div className={`dot ${item.current ? 'current' : ''}`}>
+          <div key={JSON.stringify(item)} className={`dot ${item.current ? 'current' : ''}`}>
             <div className="dot-inner">
               <h1>{item.title}</h1>
               <h5>{join(compact([item.description, item.date]), ', ')}</h5>
@@ -91,7 +91,7 @@ const Container = styled.div`
         }
       }
 
-      &:nth-child(odd) {
+      &:nth-of-type(odd) {
         > .dot-inner {
           text-align: right;
           /* position: absolute; */
