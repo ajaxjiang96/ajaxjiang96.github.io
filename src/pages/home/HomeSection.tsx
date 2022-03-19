@@ -1,18 +1,44 @@
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 import { Section } from '../../components/Section';
 import Spline from '@splinetool/react-spline';
+import { Application } from '@splinetool/runtime';
+import { noop } from 'lodash';
 
 export const HomeSection: FC = () => {
+  const [spline, setSpline] = useState<Application>();
+  const [loaded, setLoaded] = useState<boolean>(false);
+
+  function onLoad(spline: Application) {
+    setSpline(spline);
+    setLoaded(true);
+  }
+
+  const triggerScroll = useCallback(() => {
+    spline?.emitEvent('scroll', 'F7DE28F9-7180-4E2C-BAE8-B4E886CACA87');
+  }, [spline]);
+
+  useEffect(() => {
+    document.body.onscroll = () => {
+      triggerScroll();
+    };
+    () => {
+      document.body.onscroll = noop;
+    };
+  }, [triggerScroll]);
+
   return (
     <Section id="home">
       <Container>
         <PortraitContainer>
-          <Spline scene="/assets/scene.spline" />
+          <Spline
+            scene="https://prod.spline.design/Rr5jnmBGP3sHEfDz/scene.spline"
+            onLoad={onLoad}
+          />
           {/* <PortraitImg src="assets/portrait.svg" /> */}
         </PortraitContainer>
         <Info>
-          <div className="container">
+          <div className={`container ${loaded ? 'animate' : ''}`}>
             <Name>Ajax (Jiacheng) Jiang</Name>
             <Tag inverse>Suzhou, China</Tag>
             <Tag>Software Developer</Tag>
@@ -34,15 +60,14 @@ const Name = styled.span`
 const Info = styled.div`
   @keyframes slidein {
     from {
-      margin-top: 10px;
       opacity: 0;
-      transform: scale(0.9);
+
+      transform: translateY(50px) scale(0.9) rotateX(-60deg) ;
     }
 
     to {
-      margin-top: 0px;
       opacity: 1;
-      transform: scale(1);
+      transform: translateY(0px) scale(1) rotateX(0deg);
     }
   }
   margin-top: 200px;
@@ -58,11 +83,29 @@ const Info = styled.div`
   /* left: 50%; */
   .container > * {
     opacity: 0;
+  }
 
-    animation-delay: 1.5s;
+  .container.animate > * {
+    /* animation-delay: 2s; */
     animation-duration: 1s;
     animation-name: slidein;
     animation-fill-mode: forwards;
+  }
+
+  .container.animate > *:nth-of-type(1) {
+    animation-delay: 2s;
+  }
+  .container.animate > *:nth-of-type(2) {
+    animation-delay: 2.2s;
+  }
+  .container.animate > *:nth-of-type(3) {
+    animation-delay: 2.4s;
+  }
+  .container.animate > *:nth-of-type(4) {
+    animation-delay: 2.6s;
+  }
+  .container.animate > *:nth-of-type(5) {
+    animation-delay: 2.8s;
   }
 
   .container {

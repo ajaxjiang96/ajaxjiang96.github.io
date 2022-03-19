@@ -11,19 +11,19 @@ specifiers:
   '@vitejs/plugin-react': ^1.2.0
   gh-pages: ^3.2.3
   lodash: ^4.17.21
-  react: ^17.0.2
-  react-dom: ^17.0.2
+  react: ^18.0.0-rc.2
+  react-dom: ^18.0.0-rc.2
   typescript: ^4.6.2
   vite: ^2.8.6
 
 dependencies:
-  '@emotion/react': 11.8.2_00d6772dea80510e818fd171caaa025a
-  '@emotion/styled': 11.8.1_19c9b884401318110e0b35fad34f7b03
-  '@splinetool/react-spline': 2.0.0_eb0fdcfaa79d76d20b2a45ab99a9a8a9
+  '@emotion/react': 11.8.2_52c449563a5676309489fe3196ce9c58
+  '@emotion/styled': 11.8.1_67451d47529d0386ddbce6f4aa6eec73
+  '@splinetool/react-spline': 2.0.0_0fc0b95aeb7df342901403c9b670b4e7
   '@splinetool/runtime': 0.9.17
   lodash: 4.17.21
-  react: 17.0.2
-  react-dom: 17.0.2_react@17.0.2
+  react: 18.0.0-rc.2
+  react-dom: 18.0.0-rc.2_react@18.0.0-rc.2
 
 devDependencies:
   '@types/lodash': 4.14.180
@@ -357,7 +357,7 @@ packages:
     resolution: {integrity: sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==}
     dev: false
 
-  /@emotion/react/11.8.2_00d6772dea80510e818fd171caaa025a:
+  /@emotion/react/11.8.2_52c449563a5676309489fe3196ce9c58:
     resolution: {integrity: sha512-+1bcHBaNJv5nkIIgnGKVsie3otS0wF9f1T1hteF3WeVvMNQEtfZ4YyFpnphGoot3ilU/wWMgP2SgIDuHLE/wAA==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -377,7 +377,7 @@ packages:
       '@emotion/weak-memoize': 0.2.5
       '@types/react': 17.0.40
       hoist-non-react-statics: 3.3.2
-      react: 17.0.2
+      react: 18.0.0-rc.2
     dev: false
 
   /@emotion/serialize/1.0.2:
@@ -394,7 +394,7 @@ packages:
     resolution: {integrity: sha512-u0AX4aSo25sMAygCuQTzS+HsImZFuS8llY8O7b9MDRzbJM0kVJlAz6KNDqcG7pOuQZJmj/8X/rAW+66kMnMW+g==}
     dev: false
 
-  /@emotion/styled/11.8.1_19c9b884401318110e0b35fad34f7b03:
+  /@emotion/styled/11.8.1_67451d47529d0386ddbce6f4aa6eec73:
     resolution: {integrity: sha512-OghEVAYBZMpEquHZwuelXcRjRJQOVayvbmNR0zr174NHdmMgrNkLC6TljKC5h9lZLkN5WGrdUcrKlOJ4phhoTQ==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -410,11 +410,11 @@ packages:
       '@babel/runtime': 7.17.7
       '@emotion/babel-plugin': 11.7.2
       '@emotion/is-prop-valid': 1.1.2
-      '@emotion/react': 11.8.2_00d6772dea80510e818fd171caaa025a
+      '@emotion/react': 11.8.2_52c449563a5676309489fe3196ce9c58
       '@emotion/serialize': 1.0.2
       '@emotion/utils': 1.1.0
       '@types/react': 17.0.40
-      react: 17.0.2
+      react: 18.0.0-rc.2
     dev: false
 
   /@emotion/unitless/0.7.5:
@@ -453,7 +453,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@splinetool/react-spline/2.0.0_eb0fdcfaa79d76d20b2a45ab99a9a8a9:
+  /@splinetool/react-spline/2.0.0_0fc0b95aeb7df342901403c9b670b4e7:
     resolution: {integrity: sha512-lfB18x1/o75v81Sw6aGP2x0amFb7iYN/J06aJ7k5tit8IfGQ2a+QFO18Bd3g/RjvBLQqRJhh8KTVwFGqTSIxqQ==}
     peerDependencies:
       '@splinetool/runtime': '*'
@@ -461,8 +461,8 @@ packages:
       react-dom: ^17.0.0
     dependencies:
       '@splinetool/runtime': 0.9.17
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.0.0-rc.2
+      react-dom: 18.0.0-rc.2_react@18.0.0-rc.2
     dev: false
 
   /@splinetool/runtime/0.9.17:
@@ -1115,6 +1115,7 @@ packages:
   /object-assign/4.1.1:
     resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /on-change/4.0.0:
     resolution: {integrity: sha512-PTu7C9Jsz4b+sNMDpH0eZFTr7uxdOtoDWRnhaVNK50bgrrnW5nvbWI0jm5DG9qOoTnIhBzE9xoKVFPD9xgtbdg==}
@@ -1223,15 +1224,14 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /react-dom/17.0.2_react@17.0.2:
-    resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
+  /react-dom/18.0.0-rc.2_react@18.0.0-rc.2:
+    resolution: {integrity: sha512-EvLlgtc/wAzAIXX5V1gnLgeK9B3wAdEGmmrXXKRoRzXM0RNNwGN+6OxQPBlACiGDUYYEOk+GT8f6u+gNWDnTtg==}
     peerDependencies:
-      react: 17.0.2
+      react: ^18.0.0-rc.2
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
-      react: 17.0.2
-      scheduler: 0.20.2
+      react: 18.0.0-rc.2
+      scheduler: 0.21.0-rc.2-next-b9de50d2f-20220308
     dev: false
 
   /react-is/16.13.1:
@@ -1243,12 +1243,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react/17.0.2:
-    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
+  /react/18.0.0-rc.2:
+    resolution: {integrity: sha512-q32FWyA5HvqfRCN0ZOk0gUOpzJGPPh8fqbk8DYQuh4DyiGWiNgN/BxMq3/ScY0SlwDB1HOAMU1lUgtaOr5p2Ng==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
     dev: false
 
   /regenerator-runtime/0.13.9:
@@ -1279,11 +1278,10 @@ packages:
   /safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
 
-  /scheduler/0.20.2:
-    resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}
+  /scheduler/0.21.0-rc.2-next-b9de50d2f-20220308:
+    resolution: {integrity: sha512-aBVNOtcCn7k8FUi0lsIY34DZN1SUeuAjAQB6Y55Cxrhtrx9mggUepmF5gTWn7Z2RkEhQtrp7fzmRA/24bxxNJQ==}
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
     dev: false
 
   /semver/6.3.0:
